@@ -1,18 +1,52 @@
-# Application Name
+# Commerce
 
-TODO: Briefly summarize your application here.
+## django-dbfiles
 
-## Problem statement
+https://pypi.org/project/django-dbfiles/
 
-TODO: Describe the situation that your app is relevant to
+### `settings.py`
 
-## Solution description
+```python
+# Add 'dbfiles' to INSTALLED_APPS
+INSTALLED_APPS = [
+    'dbfiles',
+]
 
-TODO: Describe the approach that your application takes to solve the problem
+# Optionally set DEFAULT_FILE_STORAGE
+DEFAULT_FILE_STORAGE = 'dbfiles.storage.DBStorage'
 
-## Details and sketches
+# Choose a root url for uploaded files
+MEDIA_URL = '/media/'
+```
 
-TODO: Describe different ways that your application will be used, with all relevant screens sketched out
+### `urls.py`
+```python
+urlpatterns = [
+    ...
+    dbfiles_url(),
+]
+```
 
-Make sure that this readme is well-readable when viewed via GitHub! Images should be appropriately sized, text and images should be clearly related etc.
+## `django-on-heroku`
+
+https://pypi.org/project/django-on-heroku/
+
+### `settings.py`
+```python
+SECRET_KEY = os.getenv('SECRET_KEY')
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
+```
+
+## Heroku
+
+`Procfile`
+
+    web: gunicorn -w 2 commerce.wsgi
+
+
+git:
+
+    git subtree push --prefix app heroku main
 
