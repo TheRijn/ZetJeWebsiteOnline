@@ -48,6 +48,7 @@ https://devcenter.heroku.com/articles/heroku-cli
 
 `Procfile`
 
+    release: python manage.py migrate
     web: gunicorn -w 2 commerce.wsgi
 
 
