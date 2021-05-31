@@ -23,7 +23,7 @@ MEDIA_URL = '/media/'
 
 ### `urls.py`
 ```python
-from dbfiles import dbfile_url
+from dbfiles.urls import dbfiles_url
 
 urlpatterns = [
     ...
