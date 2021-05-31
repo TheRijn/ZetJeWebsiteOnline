@@ -1,5 +1,7 @@
 # Commerce
 
+
+
 ## django-dbfiles
 
 https://pypi.org/project/django-dbfiles/
@@ -21,6 +23,8 @@ MEDIA_URL = '/media/'
 
 ### `urls.py`
 ```python
+from dbfiles import dbfile_url
+
 urlpatterns = [
     ...
     dbfiles_url(),
@@ -33,13 +37,14 @@ https://pypi.org/project/django-on-heroku/
 
 ### `settings.py`
 ```python
-SECRET_KEY = os.getenv('SECRET_KEY')
 # Configure Django App for Heroku.
 import django_on_heroku
 django_on_heroku.settings(locals())
 ```
 
 ## Heroku
+
+https://devcenter.heroku.com/articles/heroku-cli
 
 `Procfile`
 
@@ -50,3 +55,6 @@ git:
 
     git subtree push --prefix app heroku main
 
+## Create a secret key
+
+    python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dbfiles',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Optionally set DEFAULT_FILE_STORAGE
+DEFAULT_FILE_STORAGE = 'dbfiles.storage.DBStorage'
+
+# Choose a root url for uploaded files
+MEDIA_URL = '/media/'
+
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
