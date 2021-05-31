@@ -69,3 +69,12 @@ git:
 ## Create a secret key
 
     python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+
+
+## Create superuser
+
+    $ heroku run bash
+
+A heroku shell opens
+
+    $ python manage.py createsuperuser
