@@ -1,5 +1,15 @@
 # Commerce
 
+## `requirements.txt`
+
+```
+Gunicorn  # Webserver
+Django
+django-on-heroku
+django-dbfiles  # Only when using file uploads
+Pillow  # Only when using ImageField
+```
+
 
 
 ## django-dbfiles
