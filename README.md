@@ -11,10 +11,10 @@ Pillow  # Only when using ImageField
 ```
 
 
-
 ## django-dbfiles
 
 https://pypi.org/project/django-dbfiles/
+
 
 ### `settings.py`
 
@@ -31,6 +31,7 @@ DEFAULT_FILE_STORAGE = 'dbfiles.storage.DBStorage'
 MEDIA_URL = '/media/'
 ```
 
+
 ### `urls.py`
 ```python
 from dbfiles.urls import dbfiles_url
@@ -41,9 +42,11 @@ urlpatterns = [
 ]
 ```
 
+
 ## `django-on-heroku`
 
 https://pypi.org/project/django-on-heroku/
+
 
 ### `settings.py`
 ```python
@@ -52,19 +55,16 @@ import django_on_heroku
 django_on_heroku.settings(locals())
 ```
 
+
 ## Heroku
 
 https://devcenter.heroku.com/articles/heroku-cli
 
 `Procfile`
 
-    release: python manage.py migrate
-    web: gunicorn -w 2 commerce.wsgi
+    release: python ./app/manage.py migrate
+    web: gunicorn --chdir ./app -w 2 commerce.wsgi
 
-
-git:
-
-    git subtree push --prefix app heroku main
 
 ## Create a secret key
 

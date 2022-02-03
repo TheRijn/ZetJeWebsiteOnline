@@ -12,11 +12,12 @@ class Listing(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="listings")
-    starting_bid = models.DecimalField(max_digits=14, decimal_places=2, default=Decimal("0.00"))
+    starting_bid = models.DecimalField(
+        max_digits=14, decimal_places=2, default=Decimal("0.00")
+    )
     image = models.ImageField(blank=True, null=True)
     categories = models.ManyToManyField("Category", related_name="listings")
     closed = models.BooleanField(default=False)
-
 
     def __str__(self):
         return f"{self.title} by {self.user}"
@@ -29,7 +30,9 @@ class Bid(models.Model):
 
 
 class Comment(models.Model):
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="comments")
+    listing = models.ForeignKey(
+        Listing, on_delete=models.CASCADE, related_name="comments"
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
     text = models.TextField()
 
