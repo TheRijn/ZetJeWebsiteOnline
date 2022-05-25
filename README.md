@@ -49,6 +49,8 @@ https://pypi.org/project/django-on-heroku/
 
 
 ### `settings.py`
+
+At the very bottom:
 ```python
 # Configure Django App for Heroku.
 import django_on_heroku
