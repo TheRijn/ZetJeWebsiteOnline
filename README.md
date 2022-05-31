@@ -1,4 +1,4 @@
-# Commerce
+# ZetJeWebsiteOnline (met Heroku)
 
 ## `requirements.txt`
 
@@ -12,6 +12,8 @@ Pillow  # Only when using ImageField
 
 
 ## django-dbfiles
+
+> START: This part is only needed when you use uploads.
 
 https://pypi.org/project/django-dbfiles/
 
@@ -43,6 +45,8 @@ urlpatterns = [
 ```
 
 
+> END: Only for uploads.
+
 ## `django-on-heroku`
 
 https://pypi.org/project/django-on-heroku/
@@ -70,7 +74,7 @@ https://devcenter.heroku.com/articles/heroku-cli
 
 ## Create a secret key
 
-    python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+    $ python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 
 
 ## Create superuser
