@@ -15,7 +15,7 @@ Pillow  # Only when using ImageField
 
 > START: This part is only needed when you use uploads.
 
-https://pypi.org/project/django-dbfiles/
+<https://pypi.org/project/django-dbfiles/>
 
 
 ### `settings.py`
@@ -49,7 +49,7 @@ urlpatterns = [
 
 ## `django-on-heroku`
 
-https://pypi.org/project/django-on-heroku/
+<https://pypi.org/project/django-on-heroku/>
 
 
 ### `settings.py`
@@ -64,7 +64,7 @@ django_on_heroku.settings(locals())
 
 ## Heroku
 
-https://devcenter.heroku.com/articles/heroku-cli
+<https://devcenter.heroku.com/articles/heroku-cli>
 
 `Procfile`
 
